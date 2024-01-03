@@ -1,10 +1,11 @@
 
 using UnityEngine;
+using DataBanks;
 
 namespace StreetRacing.Cars
 {
     [CreateAssetMenu(fileName = nameof(CarConfig), menuName = Constants.CarConfigsRoot + nameof(CarConfig))]
-    public class CarConfig : ScriptableObject
+    public class CarConfig : DataBankItem
     {
         [SerializeField] private CarBody bodyPrefab;
 

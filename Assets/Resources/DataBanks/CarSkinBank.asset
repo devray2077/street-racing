@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb62405e4e477064984e8bb7d53bd4c3, type: 3}
+  m_Name: CarSkinBank
+  m_EditorClassIdentifier: 
+  items:
+  - {fileID: 11400000, guid: 721e850064a4ac44b8af592a93d834ac, type: 2}
+  - {fileID: 11400000, guid: 9191ade59d713674fb5ba2a47695b537, type: 2}
+  - {fileID: 11400000, guid: 9eb1918e75f7b0a489e23d9cfddff023, type: 2}
+  - {fileID: 11400000, guid: 6d27294efff828e4790937de0fbf6d4b, type: 2}
+  - {fileID: 11400000, guid: 9733f2a78a1cd0344ba9c6650338cfc2, type: 2}
+  - {fileID: 11400000, guid: 54b5623e06e1db74e9485ac4679ef448, type: 2}

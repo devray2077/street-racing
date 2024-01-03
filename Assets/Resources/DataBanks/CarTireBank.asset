@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f928cde5b8dabbc42b56c1263a26b8b7, type: 3}
+  m_Name: CarTireBank
+  m_EditorClassIdentifier: 
+  items:
+  - {fileID: 11400000, guid: 200c8e3b75051dc4599ab266655c5ddf, type: 2}
+  - {fileID: 11400000, guid: e3ecebbab941b0d489a3dba6e1eae778, type: 2}
+  - {fileID: 11400000, guid: 43a723dbdce74fb42875a2e3fbefb7fc, type: 2}
+  - {fileID: 11400000, guid: 2f3d4036b2fd394469948f7d5b3a3d87, type: 2}
+  - {fileID: 11400000, guid: ba8d025f82b19af40963e0f0f4253ecb, type: 2}
