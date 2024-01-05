@@ -1,5 +1,6 @@
 
 using UnityEngine;
+using StreetRacing.Events;
 
 namespace StreetRacing.Startup
 {
@@ -13,7 +14,7 @@ namespace StreetRacing.Startup
 
         private void InitializeGame()
         {
-            
+            EventsManager.OnGameInitialized.Invoke();
         }
     }
 }
