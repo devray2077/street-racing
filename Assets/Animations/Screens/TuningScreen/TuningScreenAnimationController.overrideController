@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: TuningScreenAnimationController
+  m_Controller: {fileID: 9100000, guid: 99ec1b230e5facc42a0f8bcfdea77350, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 481a1d0247495b6439db6931c959c7a6, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 36c822cd2e88979448d2133807febf9d, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: db054d299d373254592534eda0d5c700, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 19457e6644657d84c815289593ead010, type: 2}
