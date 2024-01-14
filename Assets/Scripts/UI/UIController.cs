@@ -1,4 +1,5 @@
 
+using System;
 using UnityEngine;
 
 namespace StreetRacing.UI
@@ -9,12 +10,29 @@ namespace StreetRacing.UI
 
         public static UIController Instance { get; private set; }
 
+        private UIScreenBase currentScreen;
+
         private void Awake()
         {
             Instance = this;
         }
 
-        public void ShowScreen<T>(UIScreenParameters parameters = null, System.Action onShownCallback = null) where T : UIScreenBase
+        public void ShowScreen<T>() where T : UIScreenBase
+        {
+            ShowScreen<T>(null, null);
+        }
+
+        public void ShowScreen<T>(UIScreenParameters parameters) where T : UIScreenBase
+        {
+            ShowScreen<T>(parameters);
+        }
+
+        public void ShowScreen<T>(Action onShownCallback) where T : UIScreenBase
+        {
+            ShowScreen<T>(null, onShownCallback);
+        }
+
+        public void ShowScreen<T>(UIScreenParameters parameters, Action onShownCallback) where T : UIScreenBase
         {
             var screen = GetScreen<T>();
             if (screen != null)
@@ -26,6 +44,8 @@ namespace StreetRacing.UI
             var screenPrefab = Resources.Load<T>("Screens/" + typeof(T).Name);
             var screenObject = Instantiate(screenPrefab, screensRoot);
 
+            currentScreen = screenObject;
+
             if (onShownCallback != null)
             {
                 screenObject.OnShown += onShownCallback;
@@ -34,7 +54,40 @@ namespace StreetRacing.UI
             screenObject.Show(parameters);
         }
 
-        public void HideScreen<T>(System.Action onHiddenCallback = null) where T : UIScreenBase
+        public void ChangeScreen<T>() where T : UIScreenBase
+        {
+            ChangeScreen<T>(null, null);
+        }
+
+        public void ChangeScreen<T>(UIScreenParameters parameters) where T : UIScreenBase
+        {
+            ChangeScreen<T>(parameters);
+        }
+
+        public void ChangeScreen<T>(Action onShownCallback) where T : UIScreenBase
+        {
+            ChangeScreen<T>(null, onShownCallback);
+        }
+
+        public void ChangeScreen<T>(UIScreenParameters parameters, Action onShownCallback) where T : UIScreenBase
+        {
+            if (currentScreen == null)
+            {
+                ShowNextScreen();
+            }
+            else
+            {
+                currentScreen.OnHidden += ShowNextScreen;
+                currentScreen.Hide();
+            }
+
+            void ShowNextScreen()
+            {
+                ShowScreen<T>(parameters, onShownCallback);
+            }
+        }
+
+        public void HideScreen<T>(Action onHiddenCallback = null) where T : UIScreenBase
         {
             var screen = GetScreen<T>();
             if (screen == null)
@@ -49,6 +102,8 @@ namespace StreetRacing.UI
             }
 
             screen.Hide();
+
+            currentScreen = null;
         }
 
         public T GetScreen<T>() where T : UIScreenBase

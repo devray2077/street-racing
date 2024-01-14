@@ -1,5 +1,6 @@
 
 using UnityEngine;
+using StreetRacing.UI;
 using StreetRacing.Events;
 using StreetRacing.Scenes;
 
@@ -10,12 +11,18 @@ namespace StreetRacing.Flow
         [SerializeField] private SceneReference garageScene;
 
         public static GameController Instance { get; private set; }
+        public static bool IsApplicationQuitting { get; private set; }
 
         private void Awake()
         {
             Instance = this;
 
             EventsManager.OnGameInitialized.AddListener(OnGameInitialized);
+        }
+
+        private void OnApplicationQuit()
+        {
+            IsApplicationQuitting = true;
         }
 
         private void OnGameInitialized()
@@ -25,13 +32,14 @@ namespace StreetRacing.Flow
 
         private void GoToGarage()
         {
-            SceneLoader.LoadScene(garageScene, OnGarageSceneLoaded);
+            SceneLoader.LoadScene(garageScene, OnGarageSceneLoaded, () =>
+            {
+                Global.UIController.ShowScreen<LobbyScreen>();
+            });
         }
 
         private void OnGarageSceneLoaded()
         {
-            int c = 0;
-            c++;
         }
     }
 }

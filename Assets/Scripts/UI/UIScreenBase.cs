@@ -20,10 +20,7 @@ namespace StreetRacing.UI
 
         private void Awake()
         {
-            canvasGroup = GetComponent<CanvasGroup>();
-            screenAnimator = GetComponent<Animator>();
-
-            canvasGroup.blocksRaycasts = false;
+            Initialize();
         }
 
         public virtual void Show(UIScreenParameters parameters)
@@ -36,6 +33,14 @@ namespace StreetRacing.UI
         {
             canvasGroup.blocksRaycasts = false;
             screenAnimator.Play(AnimationHideHash);
+        }
+
+        protected virtual void Initialize()
+        {
+            canvasGroup = GetComponent<CanvasGroup>();
+            screenAnimator = GetComponent<Animator>();
+
+            canvasGroup.blocksRaycasts = false;
         }
 
         protected virtual void OnScreenShown()
