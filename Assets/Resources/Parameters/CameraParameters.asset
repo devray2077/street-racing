@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b53e8744933a63b4799e02461b0914f4, type: 3}
+  m_Name: CameraParameters
+  m_EditorClassIdentifier: 
+  raceMinSpeedCameraState:
+    offset: {x: 0, y: 1.8, z: -4.85}
+    rotation: {x: 0.06104854, y: 0, z: 0, w: 0.9981348}
+    fov: 44.17
+  raceMaxSpeedCameraState:
+    offset: {x: 0, y: 1.94, z: -3.72}
+    rotation: {x: 0.035597194, y: 0, z: 0, w: 0.9993662}
+    fov: 75
+  raceInterpolationSpeedBetweenStates: 1

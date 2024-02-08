@@ -1,6 +1,7 @@
 
 using UnityEngine;
 using StreetRacing.Events;
+using StreetRacing.Progress;
 
 namespace StreetRacing.Startup
 {
@@ -14,6 +15,8 @@ namespace StreetRacing.Startup
 
         private void InitializeGame()
         {
+            PlayerProgress.Load();
+
             EventsManager.OnGameInitialized.Invoke();
         }
     }

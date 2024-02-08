@@ -1,11 +1,11 @@
 
 using UnityEngine;
-using DataBanks;
+using StreetRacing.UnlockableItems;
 
 namespace StreetRacing.Cars
 {
     [CreateAssetMenu(fileName = nameof(CarTireConfig), menuName = Constants.CarConfigsRoot + nameof(CarTireConfig))]
-    public class CarTireConfig : DataBankItem
+    public class CarTireConfig : UnlockableItemConfig
     {
         [SerializeField] private GameObject prefab;
 
