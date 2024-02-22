@@ -345,6 +345,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chevrolet_Corvette
       objectReference: {fileID: 0}
+    - target: {fileID: 4860884733252827142, guid: 7815cb60407929d48a9c01bd55376e4c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7815cb60407929d48a9c01bd55376e4c, type: 3}
 --- !u!4 &2958353167592441040 stripped
