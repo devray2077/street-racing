@@ -103,6 +103,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sign2
       objectReference: {fileID: 0}
+    - target: {fileID: 5325404870481453298, guid: 725ddfe1136c95043a766d41f33231cb, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e18a41719c3413744869ea293f0d5cda, type: 2}
     - target: {fileID: 7071182760956848314, guid: 725ddfe1136c95043a766d41f33231cb, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 

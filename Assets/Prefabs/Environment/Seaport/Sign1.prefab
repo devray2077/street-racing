@@ -99,6 +99,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sign1
       objectReference: {fileID: 0}
+    - target: {fileID: 5039687269024256309, guid: 48fa9fe94a74ffe4bae6d2947a5ea1dc, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e18a41719c3413744869ea293f0d5cda, type: 2}
+    - target: {fileID: 6289776048922875581, guid: 48fa9fe94a74ffe4bae6d2947a5ea1dc, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e18a41719c3413744869ea293f0d5cda, type: 2}
     - target: {fileID: 7375137030365986079, guid: 48fa9fe94a74ffe4bae6d2947a5ea1dc, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
