@@ -1,5 +1,6 @@
 
 using UnityEngine;
+using Dreamteck.Splines;
 
 namespace StreetRacing.Cars
 {
@@ -7,9 +8,20 @@ namespace StreetRacing.Cars
     {
         [SerializeField] private CarVisualConfigurator visualConfigurator;
         [SerializeField] private new Rigidbody rigidbody;
+        [SerializeField] private SplineComputer spline;
+        [SerializeField] private float startNormalizedPosition;
 
-        public float CurrentSpeed => rigidbody.velocity.magnitude;
+        private float initialXPosition;
+        private float speed;
+
+        public float CurrentSpeed => speed;
         public float MaxSpeed => Global.CarMovementParameters.MaxSpeed;
+        public float NormalizedSpeed => CurrentSpeed / MaxSpeed;
+
+        private void Awake()
+        {
+            initialXPosition = transform.position.x;
+        }
 
         protected virtual void OnEnable()
         {
@@ -23,23 +35,26 @@ namespace StreetRacing.Cars
 
         public virtual void UpdateObject(float deltaTime)
         {
+            var sample = spline.Project(transform.position);
+            var roadDirection = -sample.forward;
+            transform.rotation = Quaternion.LookRotation(roadDirection);
             UpdateMovement();
         }
 
         private void UpdateMovement()
         {
-            if (CurrentSpeed >= MaxSpeed)
-            {
-                return;
-            }
-
             var acceleration = Global.CarMovementParameters.Acceleration;
-            var force = Vector3.forward * acceleration;
-            rigidbody.AddForce(force, ForceMode.Acceleration);
+            speed = Mathf.Clamp(speed + acceleration * Time.deltaTime, 0, MaxSpeed);
 
-            var position = transform.position;
-            position.x = 0f;
-            transform.position = position;
+            var force = transform.forward * speed;
+            var pos = transform.position;
+            pos += force;
+            transform.position = pos;
+            //rigidbody.AddForce(force, ForceMode.Acceleration);
+
+            //var position = transform.position;
+            //position.x = initialXPosition;
+            //transform.position = position;
         }
     }
 }

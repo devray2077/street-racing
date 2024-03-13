@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: CameraParameters
   m_EditorClassIdentifier: 
   raceMinSpeedCameraState:
-    offset: {x: 0, y: 1.8, z: -4.85}
-    rotation: {x: 0.06104854, y: 0, z: 0, w: 0.9981348}
-    fov: 44.17
+    offset: {x: 0, y: 2.56, z: -7.66}
+    rotation: {x: 0.079763986, y: 0, z: 0, w: 0.9968138}
+    fov: 40
   raceMaxSpeedCameraState:
-    offset: {x: 0, y: 1.94, z: -3.72}
-    rotation: {x: 0.035597194, y: 0, z: 0, w: 0.9993662}
-    fov: 75
+    offset: {x: 0, y: 1.95, z: -3.45}
+    rotation: {x: 0.05233596, y: 0, z: 0, w: 0.9986295}
+    fov: 80
   raceInterpolationSpeedBetweenStates: 1
