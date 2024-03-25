@@ -1,5 +1,6 @@
 
 using UnityEngine;
+using Sirenix.OdinInspector;
 using Dreamteck.Splines;
 
 namespace StreetRacing.Cars
@@ -13,10 +14,14 @@ namespace StreetRacing.Cars
 
         private float initialXPosition;
         private float speed;
+        private float normalizedDistance;
 
         public float CurrentSpeed => speed;
-        public float MaxSpeed => Global.CarMovementParameters.MaxSpeed;
+        public virtual float MaxSpeed => Global.CarMovementParameters.MaxSpeed;
         public float NormalizedSpeed => CurrentSpeed / MaxSpeed;
+        [ShowInInspector]
+        protected float NormalizedDistance => normalizedDistance;
+        protected virtual float Acceleration => Global.CarMovementParameters.Acceleration;
 
         private void Awake()
         {
@@ -36,6 +41,7 @@ namespace StreetRacing.Cars
         public virtual void UpdateObject(float deltaTime)
         {
             var sample = spline.Project(transform.position);
+            normalizedDistance = 1f - (float)sample.percent;
             var roadDirection = -sample.forward;
             transform.rotation = Quaternion.LookRotation(roadDirection);
             UpdateMovement();
@@ -43,8 +49,7 @@ namespace StreetRacing.Cars
 
         private void UpdateMovement()
         {
-            var acceleration = Global.CarMovementParameters.Acceleration;
-            speed = Mathf.Clamp(speed + acceleration * Time.deltaTime, 0, MaxSpeed);
+            speed = Mathf.Clamp(speed + Acceleration * Time.deltaTime, 0, MaxSpeed);
 
             var force = transform.forward * speed;
             var pos = transform.position;
