@@ -25,6 +25,11 @@ namespace StreetRacing.Cameras
 
         public void DettachFromHolder(CameraHolder cameraHolder)
         {
+            if (Global.GameController == null)
+            {
+                return;
+            }
+
             if (transform.parent == cameraHolder.transform)
             {
                 transform.SetParent(Global.GameController.transform);

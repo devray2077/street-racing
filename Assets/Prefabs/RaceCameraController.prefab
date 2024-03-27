@@ -47,6 +47,50 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camera: {fileID: 6295111687853908841}
   target: {fileID: 0}
+  finishPivot: {fileID: 0}
+  finishFOV: 70
+  finishTimeScaleCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.45
+      inSlope: -1.4336914
+      outSlope: -1.4336914
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.026408838
+    - serializedVersion: 3
+      time: 0.5
+      value: 0.15
+      inSlope: 0.04455168
+      outSlope: 0.04455168
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.23321259
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: -0.022319688
+      outSlope: -0.022319688
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.34549063
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  timeScaleAnimationDuration: 2.25
+  startPivot1: {fileID: 0}
+  startPivot1End: {fileID: 0}
+  startPivot2: {fileID: 0}
+  startPivot2End: {fileID: 0}
+  startPivot3: {fileID: 0}
+  startPivot1Duration: 3.5
+  startPivot2Duration: 3.5
+  startPivot3Duration: 2.5
 --- !u!1 &6295111687853908843
 GameObject:
   m_ObjectHideFlags: 0

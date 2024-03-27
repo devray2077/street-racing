@@ -9,6 +9,7 @@ namespace StreetRacing.Flow
     public class GameController : MonoBehaviour
     {
         [SerializeField] private SceneReference garageScene;
+        [SerializeField] private SceneReference level1Scene;
 
         public static GameController Instance { get; private set; }
         public static bool IsApplicationQuitting { get; private set; }
@@ -34,12 +35,24 @@ namespace StreetRacing.Flow
         {
             SceneLoader.LoadScene(garageScene, OnGarageSceneLoaded, () =>
             {
-                Global.UIController.ShowScreen<LobbyScreen>();
+                var parameters = new LobbyScreen.Parameters()
+                {
+                    Start = StartRace
+                };
+                Global.UIController.ShowScreen<LobbyScreen>(parameters);
             });
         }
 
         private void OnGarageSceneLoaded()
         {
+        }
+
+        private void StartRace()
+        {
+            SceneLoader.LoadScene(level1Scene, () =>
+            {
+                Global.MainCamera.gameObject.SetActive(false);
+            });
         }
     }
 }

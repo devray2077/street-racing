@@ -10,6 +10,12 @@ namespace StreetRacing.Race
 
         private void Awake()
         {
+            if (animationController == null)
+            {
+                Destroy(this);
+                return;
+            }
+
             animationController.enabled = false;
         }
 

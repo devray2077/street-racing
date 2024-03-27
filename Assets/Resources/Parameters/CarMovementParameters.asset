@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2b883a16a9657947a89daab3a84ad13, type: 3}
   m_Name: CarMovementParameters
   m_EditorClassIdentifier: 
-  acceleration: 0.1
-  maxSpeed: 0.85
+  acceleration: 5
+  maxSpeed: 42.5

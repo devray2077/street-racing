@@ -9,6 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7170709973666895607}
+  - component: {fileID: 7561431113818386717}
+  - component: {fileID: 4873913538777839668}
   m_Layer: 0
   m_Name: RoadFence
   m_TagString: Untagged
@@ -32,6 +34,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &7561431113818386717
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 633304085100552468}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 1
+  m_Constraints: 0
+  m_CollisionDetection: 2
+--- !u!114 &4873913538777839668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 633304085100552468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69b18a02f0644f0479aa2b0488c799e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rigidbody: {fileID: 7561431113818386717}
+  force: 1000
 --- !u!1001 &4877304034345222533
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -114,3 +146,21 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 461d70fe31b076c4c9596c4f1472ff29, type: 3}
   m_PrefabInstance: {fileID: 4877304034345222533}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &5723727665558928596 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 461d70fe31b076c4c9596c4f1472ff29, type: 3}
+  m_PrefabInstance: {fileID: 4877304034345222533}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &5920750507209812116
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5723727665558928596}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0034766318, y: 0.0047191824, z: 0.0036555473}
+  m_Center: {x: 0, y: 0.0023595921, z: -0.00000023841858}

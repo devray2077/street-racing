@@ -15,6 +15,7 @@ namespace StreetRacing.UI
         private void Awake()
         {
             Instance = this;
+            DontDestroyOnLoad(gameObject);
         }
 
         public void ShowScreen<T>() where T : UIScreenBase
@@ -24,7 +25,7 @@ namespace StreetRacing.UI
 
         public void ShowScreen<T>(UIScreenParameters parameters) where T : UIScreenBase
         {
-            ShowScreen<T>(parameters);
+            ShowScreen<T>(parameters, null);
         }
 
         public void ShowScreen<T>(Action onShownCallback) where T : UIScreenBase

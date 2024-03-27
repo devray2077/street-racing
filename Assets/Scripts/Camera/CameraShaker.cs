@@ -24,6 +24,7 @@ namespace StreetRacing.Cameras
         private void OnDisable()
         {
             UpdateSystem.RemoveFromUpdate(this, UpdateLayer.LateUpdate);
+            transform.localRotation = Quaternion.identity;
         }
 
         public void UpdateObject(float deltaTime)
