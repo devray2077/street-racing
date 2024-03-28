@@ -63,7 +63,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigidbody: {fileID: 7010672230185543866}
-  force: 1500
+  force: 1000
 --- !u!1001 &2860670811111113976
 PrefabInstance:
   m_ObjectHideFlags: 0
